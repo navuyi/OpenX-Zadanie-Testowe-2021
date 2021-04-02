@@ -9,7 +9,7 @@
 0. ``` node wariant_2_node.js 0 ``` - uruchomienie programu z domyślnymi
 danymi pobieranymi z podanych w instrukcji endpointów.
 
-- Dla dalszych podpunktów program nie wykonuje zaciągania danych z sieci ale wczytuje dane testowe z podanych plików w formacie json.
+- Dla dalszych podpunktów program nie wykonuje zaciągania danych z sieci ale wczytuje dane testowe z plików w formacie json, które stanowią modyfikację danych podanych w instrukcji zadania.
 
 1. ``` node wariant_2_node.js 1``` - zduplikowane tytuły postów i zróżnicowanie ilości postów na użytkownika
 
