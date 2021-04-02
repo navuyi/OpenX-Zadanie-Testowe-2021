@@ -80,7 +80,7 @@ function getNeighbours(users){
                 neighbours: [] // array for user's closest neighbour(s) id
             })
         }else{
-            console.log(`User with ID: ${user.id} has wrong coordinates and won't be taken into calculations`);
+            console.log(`User with ID: ${user.id} has wrong coordinates and will not be taken into calculations`);
         }
     })
     if(userList.length<2)

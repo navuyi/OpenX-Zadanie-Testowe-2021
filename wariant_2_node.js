@@ -25,7 +25,6 @@ const loadData = (posts_path, users_path) => {
 }
 
 function init(){
-    console.log("Hello");
     const dataVariant = process.argv[2];
 
     switch (dataVariant){
@@ -69,13 +68,17 @@ init();
 
 
 function main(){
+    console.log("\n");
     console.log("Liczba postów napisanych przez poszczególnego użytkownika");
     console.log(tasks.getPostsPerUser(posts, users));
+    console.log("\n");
 
     console.log("Lista tytułów, które nie są unikalne: ");
     console.log(tasks.getDuplicatedTitles(posts));
+    console.log("\n");
 
     console.log("Lista użytkowników i ich najbliższych sąsiadów");
     console.log(tasks.getNeighbours(users));
+    console.log("\n");
 }
 
