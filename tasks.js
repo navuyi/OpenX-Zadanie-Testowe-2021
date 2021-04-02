@@ -69,15 +69,19 @@ function getDuplicatedTitles(posts){
 function getNeighbours(users){
     let userList = [];
 
-    // Get neccesary data
+    // Get necessary data
     users.forEach((user)=>{
-        userList.push({
-            id: user.id,
-            username: user.username,
-            lat: user.address.geo.lat,
-            lng: user.address.geo.lng,
-            neighbours: [] // array for user's closest neighbour(s) id
-        })
+        if( ((user.address.geo.lat > -90) && (user.address.geo.lat<90)) && ((user.address.geo.lng >-180) && (user.address.geo.lng < 180))){
+            userList.push({
+                id: user.id,
+                username: user.username,
+                lat: user.address.geo.lat,
+                lng: user.address.geo.lng,
+                neighbours: [] // array for user's closest neighbour(s) id
+            })
+        }else{
+            console.log(`User with ID: ${user.id} has wrong coordinates and won't be taken into calculations`);
+        }
     })
     if(userList.length<2)
         return "Brak sąsiedztw";

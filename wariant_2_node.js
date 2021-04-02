@@ -14,7 +14,7 @@ const fetchData = async () =>{
         console.log(err);
     }
 }
-const loadData = (posts_path, users_path) =>{
+const loadData = (posts_path, users_path) => {
     let rawposts = fs.readFileSync(posts_path);
     let rawusers = fs.readFileSync(users_path);
 
@@ -54,6 +54,7 @@ function init(){
             console.log("Dane testowe #4");
             // Users coordinates are modified so that one user can have multiple neighbours
             // If two users share the same coordinates they become each other neighbour
+            // Also one user has wrong cooridanetes - out of range
             loadData('./test_04/posts.json', './test_04/users.json');
             break;
         default:
