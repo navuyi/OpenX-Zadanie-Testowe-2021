@@ -1,34 +1,46 @@
+// Dependencies
 const fetch = require('node-fetch');
 const fs = require('node-fs');
 const tasks = require('./tasks');
 
-
+// Global arrays for data
 let posts = [];
 let users = [];
 
 const fetchData = async () =>{
     try{
+        // Fetch remote data
         posts = await fetch("https://jsonplaceholder.typicode.com/posts").then(res => res.json());
         users = await fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json());
     } catch(err){
         console.log(err);
+        console.log("Pobranie danych nie powiodło się. Koniec programu.");
+        process.exit();
     }
 }
 const loadData = (posts_path, users_path) => {
-    let rawposts = fs.readFileSync(posts_path);
-    let rawusers = fs.readFileSync(users_path);
+    try{
+        // Load local data synchronously
+        let rawposts = fs.readFileSync(posts_path);
+        let rawusers = fs.readFileSync(users_path);
 
-    posts = JSON.parse(rawposts);
-    users = JSON.parse(rawusers);
+        posts = JSON.parse(rawposts);
+        users = JSON.parse(rawusers);
 
-    main();
+        main();
+    }catch(err){
+        console.log(err);
+        console.log("Wczytanie danych lokalnych nie powiodło się. Koniec programu.")
+        process.exit();
+    }
 }
-
 function init(){
+    // Get the program input parameter
     const dataVariant = process.argv[2];
 
     switch (dataVariant){
         case '0':
+            // This is the default scenario
             console.log("Fetching data");
             fetchData().then(()=>main());
             break;
@@ -57,16 +69,12 @@ function init(){
             loadData('./test_04/posts.json', './test_04/users.json');
             break;
         default:
-            console.log("Input option not provided or not correct. Switching to default data set")
-            console.log("Default data");
+            console.log("Parametr programu nie został podany albo jest nieprawidłowy.")
+            console.log("Przełączanie na tryb domyślny");
             fetchData().then(()=>main());
             break;
     }
 }
-init();
-
-
-
 function main(){
     console.log("\n");
     console.log("Liczba postów napisanych przez poszczególnego użytkownika");
@@ -81,4 +89,6 @@ function main(){
     console.log(tasks.getNeighbours(users));
     console.log("\n");
 }
+
+init();
 
