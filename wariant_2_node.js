@@ -23,10 +23,12 @@ const loadData = (posts_path, users_path) => {
         // Load local data synchronously
         let rawposts = fs.readFileSync(posts_path);
         let rawusers = fs.readFileSync(users_path);
-
         posts = JSON.parse(rawposts);
         users = JSON.parse(rawusers);
-
+        if(posts.length == 0 && users.length == 0){
+            console.log("Brak danych. Koniec programu");
+            process.exit();
+        }
         main();
     }catch(err){
         console.log(err);

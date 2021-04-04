@@ -3,7 +3,7 @@ function getPostsPerUser(posts, users){
     let userList = [];
 
     if(posts.length == 0 || users.length ==0){
-        return "Missing data"
+        return "Brakuje danych"
     }
 
     // Create array of user objects
