@@ -17,4 +17,4 @@ danymi pobieranymi z podanych w instrukcji endpointów.
 
 3. ``` node wariant_2_node.js 3``` - posty z identyfikatorem użytkownika, który nie koresponduje z żadnym użytkownikiem, wymieszanie kolejności użytkowników tak aby ich id nie było ciągiem rosnącym jak domyślnie 1,2,...,10
 
-4. ``` node wariant_2_node.js 4``` - zmodyfikowanie danych o użytkownikach i ich współrzędnych zamieszkania tak aby jeden użytkownik miał kilku sąsiadów. Jeśli dwóch użytkowników ma takie same współrzędne to stają się oni swoimi sąsiadami.
+4. ``` node wariant_2_node.js 4``` - zmodyfikowanie danych o użytkownikach i ich współrzędnych zamieszkania tak aby jeden użytkownik miał kilku sąsiadów. Jeśli dwóch użytkowników ma takie same współrzędne to stają się oni swoimi sąsiadami. Odległość pomiędzy nimi wynosi 0.
