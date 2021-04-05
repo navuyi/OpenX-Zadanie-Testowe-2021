@@ -41,7 +41,6 @@ function getPostsPerUser(posts, users){
     return final_arr;
 }
 
-
 function getDuplicatedTitles(posts){
     let allTitles = [];
     let repeatedTitles;
@@ -64,7 +63,6 @@ function getDuplicatedTitles(posts){
     // Return array containing titles that are not unique
     return [...new Set(repeatedTitles)];
 }
-
 
 function getNeighbours(users){
     let userList = [];
@@ -148,7 +146,6 @@ function calculateDistance(lat1, lng1, lat2, lng2){
         return dist;
     }
 }
-
 
 
 

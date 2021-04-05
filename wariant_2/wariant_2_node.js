@@ -3,9 +3,11 @@ const fetch = require('node-fetch');
 const fs = require('node-fs');
 const tasks = require('./tasks');
 
+
 // Global arrays for data
 let posts = [];
 let users = [];
+
 
 const fetchData = async () =>{
     try{
@@ -18,6 +20,7 @@ const fetchData = async () =>{
         process.exit();
     }
 }
+
 const loadData = (posts_path, users_path) => {
     try{
         // Load local data synchronously
@@ -36,6 +39,7 @@ const loadData = (posts_path, users_path) => {
         process.exit();
     }
 }
+
 function init(){
     // Get the program input parameter
     const dataVariant = process.argv[2];
@@ -77,6 +81,7 @@ function init(){
             break;
     }
 }
+
 function main(){
     console.log("\n");
     console.log("Liczba postów napisanych przez poszczególnego użytkownika");
@@ -92,5 +97,7 @@ function main(){
     console.log("\n");
 }
 
+
+// Start program by gathering data
 init();
 
