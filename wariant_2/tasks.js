@@ -80,7 +80,7 @@ function getNeighbours(users){
                 neighbours: [] // array for user's closest neighbour(s) id
             })
         }else{
-            console.log(`User with ID: ${user.id} has wrong coordinates and will not be taken into calculations`);
+            console.log(`Użytkownik z ID: ${user.id} ma złe wpółrzędne i nie będzie brany pod uwagę przy obliczeniach`);
         }
     })
     if(userList.length<2)

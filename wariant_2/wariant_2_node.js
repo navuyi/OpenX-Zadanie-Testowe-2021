@@ -43,7 +43,7 @@ function init(){
     switch (dataVariant){
         case '0':
             // This is the default scenario
-            console.log("Fetching data");
+            console.log("Pobieranie danych");
             fetchData().then(()=>main());
             break;
         case '1':
